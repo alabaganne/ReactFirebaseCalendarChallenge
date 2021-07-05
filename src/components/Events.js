@@ -33,7 +33,9 @@ export default function Events({ date, events, deleteEvent, createEvent }) {
           </div>
           <div className="events-container">
             {events.map((event) => {
-              return <Event event={event} deleteEvent={deleteEvent} />;
+              return (
+                <Event key={event.id} event={event} deleteEvent={deleteEvent} />
+              );
             })}
             <div className="dividers">
               {[...Array(11)].map((_, i) => {

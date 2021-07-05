@@ -22,21 +22,13 @@ export default function CreateEventModal({ createEvent }) {
   function handleCreateEvent() {
     setErrorMessages([]);
     let localErrorMessages = [];
-    if (
-      !newEvent.day ||
-      !newEvent.month ||
-      !newEvent.year ||
-      !newEvent.startsAt ||
-      !newEvent.endsAt ||
-      !newEvent.text
-    )
-      localErrorMessages.push("Please fill all the fields first.");
-    if (newEvent.year < 0) localErrorMessages.push("The year is invalid.");
-    if (newEvent.month < 1 || newEvent.month > 12)
+    if (!newEvent.day) localErrorMessages.push("The day is invalid.");
+    if (!newEvent.month || newEvent.month < 1 || newEvent.month > 12)
       localErrorMessages.push("The month is invalid.");
+    if (!newEvent.year || newEvent.year < 0)
+      localErrorMessages.push("The year is invalid.");
     // TODO: Complete the other validation rules
 
-    console.log(localErrorMessages);
     if (localErrorMessages.length > 0) {
       setErrorMessages(localErrorMessages);
       return;
@@ -71,7 +63,7 @@ export default function CreateEventModal({ createEvent }) {
         <div className="modal">
           <h2>Add event!</h2>
           {errorMessages.length ? (
-            <ul>
+            <ul class="error-messages">
               {errorMessages.map((msg) => (
                 <li key={msg}>{msg}</li>
               ))}
@@ -116,6 +108,13 @@ export default function CreateEventModal({ createEvent }) {
               placeholder="Event text"
               onChange={handleInputChange}
             />
+            <select name="color" onChange={handleInputChange}>
+              <option default value="blue">
+                Blue
+              </option>
+              <option value="purple">Purple</option>
+              <option value="orange">Orange</option>
+            </select>
           </form>
           <div className="footer">
             <button className="cancel" onClick={toggleModal}>

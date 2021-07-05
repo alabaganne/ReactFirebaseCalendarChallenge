@@ -51,9 +51,19 @@ function App() {
   }
 
   function createEvent(event) {
-    eventsCollection.add(event).then((ref) => {
-      console.log("A new event has been added", event);
-    });
+    eventsCollection
+      .add({
+        day: parseInt(event.day, 10),
+        month: parseInt(event.month, 10),
+        year: parseInt(event.year, 10),
+        startsAt: parseInt(event.startsAt, 10),
+        endsAt: parseInt(event.endsAt, 10),
+        text: event.text,
+        color: event.color,
+      })
+      .then((ref) => {
+        setEvents([...events, { id: ref.id, ...event }]);
+      });
   }
 
   function deleteEvent(id) {

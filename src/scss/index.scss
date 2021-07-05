@@ -10,6 +10,7 @@ $blue-400: #60a5fa;
 $blue-500: #3b82f6;
 $blue-600: #2563eb;
 $blue-800: #1e40af;
+$blue-900: #1e3a8a;
 $red-500: #ef4444;
 $red-600: #dc2626;
 
@@ -101,21 +102,8 @@ button {
         width: 100%;
         border-left-width: 4px;
         border-left-style: solid;
-        color: $blue-800;
-        font-size: 1.1rem;
-        button {
-          background-color: $blue-800;
-          color: white;
-          width: 20px;
-          height: 20px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-radius: 6px;
-          &:hover {
-            background-color: $blue-600;
-          }
-        }
+        color: $blue-900;
+        font-size: 1.2rem;
       }
     }
   }
@@ -143,30 +131,32 @@ button {
     left: 50%;
     transform: translate(-50%, -50%);
     margin: auto;
-    width: 350px;
+    width: 400px;
     max-width: 100%;
     background-color: white;
     overflow: hidden;
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
     padding: 2rem;
-    border-radius: 1.25rem;
+    border-radius: 1rem;
     h2 {
       margin-bottom: 1rem;
     }
     form {
-      input {
+      input,
+      select {
         margin-top: 1rem;
         border: 1px solid $gray-300;
         width: 100%;
       }
     }
     input,
+    select,
     button {
       padding: 0.85rem 1rem;
       border-radius: 0.6rem;
     }
     .footer {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -188,4 +178,9 @@ button {
       }
     }
   }
+}
+
+.error-messages {
+  color: $red-500;
+  margin-left: 1.5rem;
 }
