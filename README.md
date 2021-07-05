@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# React Calendar with Firebase as a Backend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Work Done
+
+- Layout
+- Adding events to the calendar
+- Deleting events
+
+## Technologies
+
+- React.js
+- Firebase
+- SCSS
 
 ## Installation
 
