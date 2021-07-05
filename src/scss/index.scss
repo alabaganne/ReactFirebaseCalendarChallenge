@@ -1,0 +1,191 @@
+$row-height: 6rem;
+$gray-200: #f3f4f6;
+$gray-300: #d1d5db;
+$gray-400: #9ca3af;
+$gray-500: #6b7280;
+$gray-600: #4b5563;
+$gray-700: #374151;
+$gray-800: #1f2937;
+$blue-400: #60a5fa;
+$blue-500: #3b82f6;
+$blue-600: #2563eb;
+$blue-800: #1e40af;
+$red-500: #ef4444;
+$red-600: #dc2626;
+
+@import "./Calendar.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+html {
+  font-size: 13px;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: inherit;
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 600px;
+}
+
+.events-section {
+  padding: 4rem 6rem 6rem 6rem;
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid $gray-200;
+    h1 {
+      color: $blue-800;
+    }
+    button.add-event-toggler {
+      background-color: $blue-500;
+      color: white;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      &:hover {
+        background-color: $blue-400;
+      }
+    }
+  }
+  main {
+    padding-top: 5.5rem;
+    display: flex;
+    .hours-container {
+      width: 5.25rem;
+      div {
+        display: block;
+        height: $row-height;
+        color: #a4b0c3;
+        transform: translateY(-0.5rem);
+      }
+      div:last-child {
+        height: 0;
+        background: #000;
+      }
+    }
+    .events-container {
+      width: 100%;
+      position: relative;
+      .dividers div {
+        border-bottom: 1px solid $gray-200;
+        height: $row-height;
+      }
+      .dividers:nth-child(1) {
+        border-top: 1px solid $gray-200;
+      }
+      .event {
+        position: absolute;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-left-width: 4px;
+        border-left-style: solid;
+        color: $blue-800;
+        font-size: 1.1rem;
+        button {
+          background-color: $blue-800;
+          color: white;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 6px;
+          &:hover {
+            background-color: $blue-600;
+          }
+        }
+      }
+    }
+  }
+}
+.date-picker-section {
+  padding: 4rem 6rem 6rem 6rem;
+  background-color: $gray-600;
+}
+
+.modal-container {
+  display: none;
+  &.active {
+    display: block;
+  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    width: 350px;
+    max-width: 100%;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    border-radius: 1.25rem;
+    h2 {
+      margin-bottom: 1rem;
+    }
+    form {
+      input {
+        margin-top: 1rem;
+        border: 1px solid $gray-300;
+        width: 100%;
+      }
+    }
+    input,
+    button {
+      padding: 0.85rem 1rem;
+      border-radius: 0.6rem;
+    }
+    .footer {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      button {
+        color: white;
+      }
+      .cancel {
+        background-color: $gray-700;
+        margin-right: 0.25rem;
+        &:hover {
+          background-color: $gray-800;
+        }
+      }
+      .add {
+        background-color: $blue-500;
+        &:hover {
+          background-color: $blue-600;
+        }
+      }
+    }
+  }
+}
