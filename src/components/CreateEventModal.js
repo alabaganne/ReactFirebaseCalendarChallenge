@@ -1,32 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 export default function CreateEventModal({ createEvent }) {
   const [active, setActive] = useState(false);
+  const dayRef = useRef();
+  const monthRef = useRef();
+  const yearRef = useRef();
+  const startsAtRef = useRef();
+  const endsAtRef = useRef();
+  const textRef = useRef();
+  const colorRef = useRef();
 
   function toggleModal() {
     setActive(!active);
   }
 
-  const [newEvent, setNewEvent] = useState({});
-  function handleInputChange(event) {
-    const target = event.target;
-    const { name, value } = target;
-
-    let data = newEvent;
-    data[name] = value;
-
-    setNewEvent(data);
-  }
-
   const [errorMessages, setErrorMessages] = useState([]);
   function handleCreateEvent() {
+    const day = dayRef.current.value;
+    const month = monthRef.current.value;
+    const year = yearRef.current.value;
+    const startsAt = startsAtRef.current.value;
+    const endsAt = endsAtRef.current.value;
+    const text = textRef.current.value;
+    const color = colorRef.current.value;
+
     setErrorMessages([]);
     let localErrorMessages = [];
-    if (!newEvent.day) localErrorMessages.push("The day is invalid.");
-    if (!newEvent.month || newEvent.month < 1 || newEvent.month > 12)
+    if (!day) localErrorMessages.push("The day is invalid.");
+    if (!month || month < 1 || month > 12)
       localErrorMessages.push("The month is invalid.");
-    if (!newEvent.year || newEvent.year < 0)
-      localErrorMessages.push("The year is invalid.");
+    if (!year || year < 0) localErrorMessages.push("The year is invalid.");
     // TODO: Complete the other validation rules
 
     if (localErrorMessages.length > 0) {
@@ -34,8 +37,26 @@ export default function CreateEventModal({ createEvent }) {
       return;
     }
 
-    createEvent(newEvent);
-    setNewEvent({});
+    const event = {
+      day,
+      month,
+      year,
+      startsAt,
+      endsAt,
+      text,
+      color,
+    };
+    createEvent(event);
+
+    dayRef.current.value = null;
+    monthRef.current.value = null;
+    yearRef.current.value = null;
+    startsAtRef.current.value = null;
+    endsAtRef.current.value = null;
+    textRef.current.value = null;
+    colorRef.current.value = null;
+
+    toggleModal();
   }
 
   return (
@@ -72,43 +93,33 @@ export default function CreateEventModal({ createEvent }) {
             ""
           )}
           <form>
-            <input
-              type="number"
-              name="day"
-              placeholder="Day"
-              onChange={handleInputChange}
-            />
+            <input type="number" name="day" placeholder="Day" ref={dayRef} />
             <input
               type="number"
               name="month"
               placeholder="Month"
-              onChange={handleInputChange}
+              ref={monthRef}
             />
-            <input
-              type="number"
-              name="year"
-              placeholder="Year"
-              onChange={handleInputChange}
-            />
+            <input type="number" name="year" placeholder="Year" ref={yearRef} />
             <input
               type="number"
               name="startsAt"
               placeholder="Starts At (hour)"
-              onChange={handleInputChange}
+              ref={startsAtRef}
             />
             <input
               type="number"
               name="endsAt"
               placeholder="Ends At (hour)"
-              onChange={handleInputChange}
+              ref={endsAtRef}
             />
             <input
               type="text"
               name="text"
               placeholder="Event text"
-              onChange={handleInputChange}
+              ref={textRef}
             />
-            <select name="color" onChange={handleInputChange}>
+            <select name="color" ref={colorRef}>
               <option default value="blue">
                 Blue
               </option>

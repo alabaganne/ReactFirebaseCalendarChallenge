@@ -140,7 +140,8 @@ button {
     background-color: white;
     overflow: hidden;
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
-    padding: 2.5rem 3rem;
+    padding: 1.7rem;
+    border-radius: 0.5rem;
     h2 {
       margin-bottom: 1rem;
     }
@@ -156,6 +157,7 @@ button {
     select,
     button {
       padding: 0.85rem 1rem;
+      border-radius: 0.25rem;
     }
     .footer {
       margin-top: 1.5rem;

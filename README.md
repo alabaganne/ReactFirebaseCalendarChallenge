@@ -18,12 +18,12 @@ This project is a part of challenge in order to join a company called "Sastec gr
 
 ## Bugs
 
-- the `handleDeleteEvent()` on the `Event.js` file is fired when the component mounts and I couldn't figure out why.
+- the `handleDeleteEvent()` on the `Event.js` file is fired when the component mounts.
 
 ## Installation
 
 After cloning the project and moving to its directory, run the following commands:
 
-### `npm i`
+## `npm i`
 
-### `npm start`
+## `npm start`

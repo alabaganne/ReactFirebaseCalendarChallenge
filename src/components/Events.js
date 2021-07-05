@@ -51,7 +51,7 @@ export default function Events({ date, events, deleteEvent, createEvent }) {
           </main>
         )}
         {events.length === 0 && (
-          <div class="warning-message">You have no events on this day!</div>
+          <div className="warning-message">You have no events on this day!</div>
         )}
       </div>
     </>
