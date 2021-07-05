@@ -25,25 +25,34 @@ export default function Events({ date, events, deleteEvent, createEvent }) {
           <h2>{`${date.getDate()} ${months[date.getMonth()]}`}</h2>
           <CreateEventModal createEvent={createEvent} />
         </header>
-        <main>
-          <div className="hours-container">
-            {[...Array(12)].map((_, i) => {
-              return <div key={i}>{i + 9}:00</div>;
-            })}
-          </div>
-          <div className="events-container">
-            {events.map((event) => {
-              return (
-                <Event key={event.id} event={event} deleteEvent={deleteEvent} />
-              );
-            })}
-            <div className="dividers">
-              {[...Array(11)].map((_, i) => {
-                return <div key={i}></div>;
+        {events.length > 0 && (
+          <main>
+            <div className="hours-container">
+              {[...Array(12)].map((_, i) => {
+                return <div key={i}>{i + 9}:00</div>;
               })}
             </div>
-          </div>
-        </main>
+            <div className="events-container">
+              {events.map((event) => {
+                return (
+                  <Event
+                    key={event.id}
+                    event={event}
+                    deleteEvent={deleteEvent}
+                  />
+                );
+              })}
+              <div className="dividers">
+                {[...Array(11)].map((_, i) => {
+                  return <div key={i}></div>;
+                })}
+              </div>
+            </div>
+          </main>
+        )}
+        {events.length === 0 && (
+          <div class="warning-message">You have no events on this day!</div>
+        )}
       </div>
     </>
   );

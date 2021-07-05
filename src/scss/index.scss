@@ -37,9 +37,10 @@ button {
 }
 
 .container {
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 600px;
+  grid-template-columns: 1fr 30%;
 }
 
 .events-section {
@@ -50,6 +51,7 @@ button {
     align-items: center;
     padding-bottom: 3rem;
     border-bottom: 1px solid $gray-200;
+    margin-bottom: 4rem;
     h1 {
       color: $blue-800;
     }
@@ -68,7 +70,6 @@ button {
     }
   }
   main {
-    padding-top: 5.5rem;
     display: flex;
     .hours-container {
       width: 5.25rem;
@@ -104,6 +105,9 @@ button {
         border-left-style: solid;
         color: $blue-900;
         font-size: 1.2rem;
+        button {
+          padding: 0.6rem;
+        }
       }
     }
   }
@@ -131,13 +135,12 @@ button {
     left: 50%;
     transform: translate(-50%, -50%);
     margin: auto;
-    width: 400px;
+    width: 450px;
     max-width: 100%;
     background-color: white;
     overflow: hidden;
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
-    padding: 2rem;
-    border-radius: 1rem;
+    padding: 2.5rem 3rem;
     h2 {
       margin-bottom: 1rem;
     }
@@ -153,7 +156,6 @@ button {
     select,
     button {
       padding: 0.85rem 1rem;
-      border-radius: 0.6rem;
     }
     .footer {
       margin-top: 1.5rem;
@@ -183,4 +185,8 @@ button {
 .error-messages {
   color: $red-500;
   margin-left: 1.5rem;
+}
+.warning-message {
+  color: $red-600;
+  font-size: 1.2rem;
 }
