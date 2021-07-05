@@ -13,9 +13,10 @@ export default function Event({ event, deleteEvent }) {
     borderColor = "rgba(61, 131, 249, 1)";
   }
 
-  function handleDeleteEvent(id) {
+  // ! I couldn't figure out why this function fires when the components mounts so I commented the line responsible for deleting the event to prevent it from deleting all the events on mount.
+  function handleDeleteEvent(event) {
     console.log("debug");
-    deleteEvent(id);
+    // deleteEvent(id);
   }
 
   return (
@@ -29,7 +30,7 @@ export default function Event({ event, deleteEvent }) {
       }}
     >
       <div>{event.text}</div>
-      <button>
+      <button onClick={handleDeleteEvent(event)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="17"

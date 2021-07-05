@@ -1,8 +1,8 @@
 # React Calendar with Firebase as a Backend
 
-## Work Done
+## Work done
 
-- Layout
+- Transforming an image into a web page (not completed)
 - Adding events to the calendar
 - Deleting events
 
@@ -11,6 +11,10 @@
 - React.js
 - Firebase
 - SCSS
+
+## Bugs
+
+- the `handleDeleteEvent()` on the `Event.js` file is fired when the component mounts and I couldn't figure out why.
 
 ## Installation
 
