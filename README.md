@@ -1,5 +1,7 @@
 # React Calendar with Firebase as a Backend
 
+This project is a part of challenge in order to join a company called `Sastec group` located in Sfax. I had to learn React, Firebase and develop this project in 3 days.
+
 ## Work done
 
 - Transforming an image into a web page (not completed)
