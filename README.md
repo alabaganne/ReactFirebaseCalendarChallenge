@@ -1,6 +1,6 @@
 # React Calendar with Firebase as a Backend
 
-This project is a part of challenge in order to join a company called "Sastec group". For this challenge, I had to learn React, Firebase firestore and develop this project in 3 days.
+This project is a part of a test to join "Sastec group" as a Full-stack web developer. I had to learn React, Firebase firestore and develop this app in 3 days.
 
 ![alt text](https://github.com/alabaganne/react-calendar-challenge/blob/main/screenshot.png?raw=true)
 
