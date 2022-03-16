@@ -18,6 +18,4 @@ This project is a part of a test to join "Sastec group" as a Full-stack web deve
 
 ### Installation
 After cloning the project and moving to its directory, run the following commands:
-
-#### `npm i`
-#### `npm start`
+`npm install && npm start`
