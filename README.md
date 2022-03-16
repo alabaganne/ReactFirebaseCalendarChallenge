@@ -1,29 +1,23 @@
 # React Calendar with Firebase as a Backend
-
 This project is a part of a test to join "Sastec group" as a Full-stack web developer. I had to learn React, Firebase firestore and develop this app in 3 days.
 
 ![alt text](https://github.com/alabaganne/react-calendar-challenge/blob/main/screenshot.png?raw=true)
 
-## Work done
-
+### Work done
 - Transforming an image into a web page (not completed)
 - Adding events to the calendar
 - Deleting events
 
-## Technologies
-
+### Technologies
 - React.js
 - Firebase
 - SCSS
 
-## Bugs
+### Bugs
+- the `handleDeleteEvent()` on the `Event.js` file for some unknown reason is called automatically when the component mounts.
 
-- the `handleDeleteEvent()` on the `Event.js` file is fired when the component mounts.
-
-## Installation
-
+### Installation
 After cloning the project and moving to its directory, run the following commands:
 
-## `npm i`
-
-## `npm start`
+`npm i`
+`npm start`
