@@ -17,5 +17,4 @@ This project is a part of a test to join "Sastec group" as a Full-stack web deve
 - the `handleDeleteEvent()` on the `Event.js` file for some unknown reason is called automatically when the component mounts.
 
 ### Installation
-After cloning the project and moving to its directory, run the following commands:
-`npm install && npm start`
+After cloning the project and moving to its directory, run this command `npm install && npm start`
